@@ -1,0 +1,37 @@
+{
+    "name": "majidmvulle/notification-bundle",
+    "type": "library",
+    "license": "None",
+    "description": "Library for notifications; push notifications, emails, sms, browser notifications",
+    "authors": [
+        {
+            "name": "Majid Mvulle",
+            "email": "majid@majidmvulle.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "MajidMvulle\\Bundle\\NotificationBundle\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=7.2",
+        "jms/job-queue-bundle": "^2.0",
+        "jms/serializer-bundle": "^3.0",
+        "tijsverkoyen/css-to-inline-styles": "^2.2"
+    },
+    "require-dev": {
+        "symfony/phpunit-bridge": "^4.0"
+    },
+    "config": {
+        "platform": {
+            "php": "7.2.0"
+        },
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    }
+}

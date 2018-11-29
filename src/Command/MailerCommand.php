@@ -104,6 +104,7 @@ class MailerCommand extends ContainerAwareCommand
 
     protected function execute(InputInterface $input, OutputInterface $output): void
     {
+        $this->output = $output;
         $this->startTime = time();
         $this->maxRuntime = (int) $input->getOption('max-runtime');
 
@@ -149,7 +150,6 @@ class MailerCommand extends ContainerAwareCommand
         $this->cssFilePath = $container->getParameter('majidmvulle.notification.mailer.css_file_path');
         $this->cssToInlineStyles = new CssToInlineStyles();
 
-        $this->output = $output;
         $this->doMail();
     }
 

@@ -9,6 +9,7 @@ use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 use Gedmo\Mapping\Annotation as Gedmo;
 use MajidMvulle\Bundle\NotificationBundle\Constants;
 use MajidMvulle\Bundle\NotificationBundle\Interfaces\MailInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Class Mailer.

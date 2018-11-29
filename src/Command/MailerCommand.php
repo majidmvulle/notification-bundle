@@ -134,8 +134,8 @@ class MailerCommand extends ContainerAwareCommand
         $entityManagerId = $container->getParameter('majidmvulle.notification.mailer.entity_manager');
         $this->entityManager = $container->get($entityManagerId);
 
-        $this->mailerService = new PHPMailer(true);
-        $this->mailerService->SMTPDebug = true;
+        $this->mailerService = new PHPMailer($this->output->isVerbose());
+        $this->mailerService->SMTPDebug = $this->output->isVerbose();
         $this->mailerService->isSMTP();
         $this->mailerService->Host = $container->getParameter('majidmvulle.notification.mailer.smtp_url');
         $this->mailerService->SMTPAuth = true;

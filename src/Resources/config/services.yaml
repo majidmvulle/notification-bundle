@@ -1,2 +1,4 @@
 services:
-    # Services declaration
+    majidmvulle.notification.mailer_manager:
+        class: MajidMvulle\Bundle\NotificationBundle\MailerManager
+        arguments: ['@service_container']

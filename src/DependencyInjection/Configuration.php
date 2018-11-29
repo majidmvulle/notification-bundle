@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace MajidMvulle\Bundle\NotificationBundle\DependencyInjection;
 
+use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -18,8 +19,29 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
 
-        $treeBuilder->root('majidmvulle_notification')->addDefaultsIfNotSet();
+        $rootNode = $treeBuilder->root('majidmvulle_notification')->addDefaultsIfNotSet();
+
+        $this->addMailerSection($rootNode);
 
         return $treeBuilder;
+    }
+
+    private function addMailerSection(ArrayNodeDefinition $node): void
+    {
+        $node
+            ->children()
+                ->arrayNode('mailer')
+                    ->children()
+                        ->variableNode('entity_class')->end()
+                        ->variableNode('entity_manager')->end()
+                        ->scalarNode('css_file_path')->end()
+                        ->scalarNode('smtp_url')->isRequired()->end()
+                        ->scalarNode('smtp_username')->isRequired()->end()
+                        ->scalarNode('smtp_password')->isRequired()->end()
+                        ->scalarNode('smtp_port')->isRequired()->end()
+                        ->scalarNode('smtp_encryption')->end()
+                    ->end()
+                ->end()
+            ->end();
     }
 }

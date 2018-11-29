@@ -18,8 +18,18 @@
     "prefer-stable": true,
     "require": {
         "php": ">=7.2",
+        "ext-mongo": "*",
+        "alcaeus/mongo-php-adapter": "^1.1",
+        "doctrine/doctrine-bundle": "^1.8.1",
+        "doctrine/doctrine-fixtures-bundle": "^3.0.2",
+        "doctrine/doctrine-migrations-bundle": "^1.3.1",
+        "doctrine/mongodb-odm-bundle": "^3.4.1",
+        "doctrine/orm": "^2.6.0",
+        "gedmo/doctrine-extensions": "^2.4.31",
         "jms/job-queue-bundle": "^2.0",
         "jms/serializer-bundle": "^2.4.2",
+        "phpmailer/phpmailer": "^6.0",
+        "symfony/twig-bundle": "^4.1",
         "tijsverkoyen/css-to-inline-styles": "^2.2"
     },
     "require-dev": {
